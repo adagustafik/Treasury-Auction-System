@@ -56,7 +56,7 @@ All registered users can see public Auction resolutions, so that fair treatment 
         - setting up Redux Actions, Reducers & Selectors
         - FE data flow - updating the Redux store state (Login/Logout, profile update)
 
-    * [FE] Register
+    * [FE] Register & Profile
         - TopBarComponent with ReactNode as prop (Login / Register link / username from Redux store)
         - RegisterFormComponent 
             - reactive input fields + FE validation after submit
