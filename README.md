@@ -22,6 +22,12 @@ After an Auction has ended, admin is able to trigger automated auction resolutio
 All registered users can see public Auction resolutions, so that fair treatment & trust is ensured.
 
 
+## Run app
+1. Copy data from .env.example to .env file + adjust you db username & password
+2. Open 2 terminals -> navigate in each to BE & FE folders
+3. Type "npm run dev" command to run the scripts
+
+
 ## Lessons learned
     * [BE] Authentication / Authorization
         - generating & validating jsonwebtoken
