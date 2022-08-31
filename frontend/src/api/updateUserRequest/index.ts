@@ -1,0 +1,1 @@
+export { fetchUpdateUser } from "./updateUserRequest";

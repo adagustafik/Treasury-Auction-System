@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with filter function prop 1`] = `
+<p>
+  There were no bids made
+</p>
+`;

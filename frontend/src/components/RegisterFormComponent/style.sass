@@ -1,0 +1,20 @@
+@use '../../App'
+
+.register-form
+    @include App.centeredPosition($width: 45vw)
+
+.register-form input
+    @include App.inputFields
+    font-weight: 700   
+
+.register-form input::placeholder
+    font-size: 1.8vh
+    color: 80% black
+
+.register-form button
+    @include App.inputFields
+    background-color: App.$buttonColor
+    color: black
+    font-size: 2.1vh
+    font-weight: 500
+    border: 1px solid App.$buttonColor c

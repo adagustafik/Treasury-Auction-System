@@ -1,0 +1,1 @@
+export { fetchRegister } from "./registerRequest";

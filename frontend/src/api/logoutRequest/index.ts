@@ -1,0 +1,1 @@
+export { fetchLogout } from "./logoutRequest";

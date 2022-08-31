@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the TitleComponent correctly 1`] = `
+<div
+  className="page-title-box"
+>
+  <h1>
+    A page Title
+  </h1>
+</div>
+`;

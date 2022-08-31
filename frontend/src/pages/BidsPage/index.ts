@@ -1,0 +1,1 @@
+export { BidsPage } from "./BidsPage";

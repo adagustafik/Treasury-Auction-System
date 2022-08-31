@@ -1,0 +1,1 @@
+export { fetchNewBid } from "./newBidRequest";

@@ -1,0 +1,6 @@
+export const INTERNAL_SERVER_ERROR = 500;
+export const BAD_REQUEST_ERROR = 400;
+export const UNPROCESSABLE_ENTITY_ERROR = 422;
+export const UNAUTHORIZED_ERROR = 401;
+export const FORBIDDEN_ERROR = 403;
+export const TOKEN_REQUIRED_ERROR = 499;

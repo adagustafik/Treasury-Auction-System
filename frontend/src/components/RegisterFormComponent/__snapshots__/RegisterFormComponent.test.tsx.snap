@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly for register page 1`] = `
+<div
+  className="register-form"
+>
+  <form
+    className=""
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <input
+      className="form-control"
+      minLength={3}
+      onChange={[Function]}
+      placeholder="username"
+      required={true}
+      type="text"
+      value=""
+    />
+    <div
+      className="invalid-feedback"
+    >
+      Username has to be at least 3 characters long
+    </div>
+    <input
+      className="form-control"
+      minLength={6}
+      onChange={[Function]}
+      pattern="(^(.+)@(.+)\\\\.(.{2,})$)"
+      placeholder="email"
+      required={true}
+      type="text"
+      value=""
+    />
+    <div
+      className="invalid-feedback"
+    >
+      Please, provide valid email address
+    </div>
+    <input
+      className="form-control"
+      onChange={[Function]}
+      pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!-/:-@_{-~}]).{8,}"
+      placeholder="password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <div
+      className="invalid-feedback"
+    >
+      Password must be at least 8 characters long and contain a number, special character and capital letter
+    </div>
+    <input
+      className="form-control"
+      onChange={[Function]}
+      pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!-/:-@_{-~}]).{8,}"
+      placeholder="confirm your password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <div
+      className="invalid-feedback"
+    >
+      Password must be at least 8 characters long and contain a number, special character and capital letter
+    </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="submit"
+    >
+      REGISTER
+    </button>
+  </form>
+</div>
+`;

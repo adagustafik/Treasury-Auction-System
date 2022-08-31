@@ -1,0 +1,21 @@
+name: Deploy frontend
+
+on: 
+  push:
+      branches: 
+        - master
+      pull_request:
+        - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: git fetch --prune --unshallow
+      - name: Deploying to Heroku
+        env:
+          TOKEN: ${{ secrets.HEROKU_API_KEY }}
+          APP: ${{ secrets.HEROKU_APP }}
+        run: |
+            git remote add heroku-fe https://heroku:$TOKEN@git.heroku.com/$APP.git
+            git subtree push --prefix frontend heroku-fe master

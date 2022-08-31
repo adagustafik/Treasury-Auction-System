@@ -1,0 +1,1 @@
+export { fetchResolution } from "./getResolutionRequest";

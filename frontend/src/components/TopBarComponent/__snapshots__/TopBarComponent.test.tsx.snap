@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with Link node to login 1`] = `
+<div
+  className="top-bar container-fluid"
+>
+  <a
+    href="/dashboard"
+    onClick={[Function]}
+  >
+    <div
+      className="top-bar-child"
+    >
+      <p>
+        TREASURY
+      </p>
+      <p>
+        AUCTION
+      </p>
+      <p>
+        SYSTEM
+      </p>
+    </div>
+  </a>
+  <div
+    className="top-bar-child"
+  >
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      LOGIN
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders correctly without props 1`] = `
+<div
+  className="top-bar container-fluid"
+>
+  <a
+    href="/dashboard"
+    onClick={[Function]}
+  >
+    <div
+      className="top-bar-child"
+    >
+      <p>
+        TREASURY
+      </p>
+      <p>
+        AUCTION
+      </p>
+      <p>
+        SYSTEM
+      </p>
+    </div>
+  </a>
+  <div
+    className="top-bar-child"
+  />
+</div>
+`;

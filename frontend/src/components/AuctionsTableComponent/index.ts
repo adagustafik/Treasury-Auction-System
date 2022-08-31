@@ -1,0 +1,1 @@
+export { AuctionsTableComponent } from "./AuctionsTableComponent";

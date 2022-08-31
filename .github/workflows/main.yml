@@ -1,0 +1,40 @@
+name: Eslint + Typecheck + Testing MAIN
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3 
+
+      - name: Run script file creating .env
+        run: | 
+          chmod +x script.sh 
+          bash script.sh
+        shell: bash  
+
+      - name: Set up MySQL  
+        uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: '5.6'
+          user: 'ada'
+          password: 'ada'
+      - run: mysql -uada -pada -h127.0.0.1 -e 'SELECT version(); CREATE DATABASE IF NOT EXISTS etas;'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+          cache: npm  
+
+      - name: BACKEND
+        uses: ./backend
+
+      - name: FRONTEND
+        uses: ./frontend
+
+
+ 
