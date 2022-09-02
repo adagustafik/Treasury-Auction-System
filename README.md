@@ -30,19 +30,19 @@ All registered users can see public Auction resolutions, so that fair treatment 
 
 ## Architecture
 ### DB Entities
-Auction\
+**Auction**\
     @OneToMany Bid\
     @OneToMany Purchase (to display Auction resolution to users)
 
-User\
+**User**\
     @OneToMany Bid\
     @OneToMany Purchase\
 
-Bid\
+**Bid**\
     @ManyToOne User\
     @ManyToOne Auction
 
-Purchase\
+**Purchase**\
     @OneToOne Bid (Purchase -> Bid -> User connection used here)\
     @ManyToOne Auction
 
@@ -57,40 +57,40 @@ FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboar
 
 
 ## Lessons learned  
-    * [BE] Authentication / Authorization
+    [BE] Authentication / Authorization
         - generating & validating jsonwebtoken
         - handling registration / login / logout
         - retrieving jwt from cookies
         - writing own middleware functions
 
-    * [BE] TypeORM
+    [BE] TypeORM
         - basic CRUD operations
         - writing async functions
         - using multiple relational calls to the DB (getPurchases)
         - leveraging Transactional Entity Manager for data atomicity
 
-    * [BE] Express router & Jest
+    [BE] Express router & Jest
         - create REST api endpoints
         - using req / res objects
         - sending back success -> json object / error -> txt
         - integration test simulating HTTP calls
 
-    * [BE] Validation workflow 
+    [BE] Validation workflow 
         - usage of DTOs & decorators from class-validator 
         - building general utility with validate function
         - validation is triggered directly from Router endpoints & service is accessed afterwards    
 
-    * [BE] Placing bids & Auction resolution
+    [BE] Placing bids & Auction resolution
         - leveraging SQL ordering and filtering capacity to optimize the app (bidsPerUser, resolveAuctions)
         - abstracting complex logic into separate functions
         - thinking about business logic & "edge cases" (max rate calculation -> min rate has to be defined!)
 
-    * [FE] API & Redux
+    [FE] API & Redux
         - fetching data from BE & storing them in the Redux store
         - setting up Redux Actions, Reducers & Selectors
         - FE data flow - updating the Redux store state (Login/Logout, profile update)
 
-    * [FE] Register & Profile
+    [FE] Register & Profile
         - TopBarComponent with ReactNode as prop (Login / Register link / username from Redux store)
         - RegisterFormComponent 
             - reactive input fields + FE validation after submit
@@ -98,12 +98,12 @@ FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboar
             - implementing Toasts for user notification
             - component reused on Profile page for resetting email &/ password (with preset email value - UX)
 
-    * [FE] Dashboard
+    [FE] Dashboard
         - selective dispatch of data fetch based on the user role
         - selective display of SideBarComponent & content for logged-in user
         - limiting display to top 5 via props for both Auctions/ Bids tables
 
-    * [FE] Bids & Auctions
+    [FE] Bids & Auctions
         - date & time conversions & comparisons - utilities
         - filtering display to current / history via props
         - usage of React fragments & key mapping
@@ -112,7 +112,7 @@ FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboar
         - AuctionsTable has different rendering based on user role (admin cannot place bids) & based on page (dashboard - auctions extended)
         - selective input fields display (competitive / non-competitive)
   
-    * [devops] setup initial CI via GitHub Actions
+    [devops] setup initial CI via GitHub Actions
         - handling setup for 2 apps in 1 repo
         - setup env vars for MySQL
 
