@@ -28,6 +28,35 @@ All registered users can see public Auction resolutions, so that fair treatment 
 * Type "npm run dev" command to run the scripts
 
 
+## Tech Stack
+**Typescript**
+
+**Eslint + Prettier**
+enforcing a unified code style across the app
+
+**Jest + supertest**
+test framework + library simulate HTTP calls for integration tests
+
+**dotenv**
+loading environmental variables from a .env file into `process.env`.
+
+**Node.js + ts-node + nodemon**
+- server side runtime environment built on Chrome's V8 JavaScript engine
+- a CLI tool that can run Typescript files directly
+- automated listening to file changes
+
+**MySQL + TypeORM**
+
+**Express.js**
+web framework for HTTP communication
+
+**React + Redux**
+frontend UI + state managment
+
+**Sass**
+css extension
+
+
 ## Architecture
 ### DB Entities
 **Auction**\
@@ -57,122 +86,61 @@ FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboar
 
 
 ## Lessons learned  
-    [BE] Authentication / Authorization
-        - generating & validating jsonwebtoken
-        - handling registration / login / logout
-        - retrieving jwt from cookies
-        - writing own middleware functions
+* [BE] Authentication / Authorization
+    - generating & validating jsonwebtoken
+    - handling registration / login / logout
+    - retrieving jwt from cookies
+    - writing own middleware functions
 
-    [BE] TypeORM
-        - basic CRUD operations
-        - writing async functions
-        - using multiple relational calls to the DB (getPurchases)
-        - leveraging Transactional Entity Manager for data atomicity
+* [BE] TypeORM
+    - basic CRUD operations
+    - writing async functions
+    - using multiple relational calls to the DB (getPurchases)
+    - leveraging Transactional Entity Manager for data atomicity
 
-    [BE] Express router & Jest
-        - create REST api endpoints
-        - using req / res objects
-        - sending back success -> json object / error -> txt
-        - integration test simulating HTTP calls
+* [BE] Express router & Jest
+    - create REST api endpoints
+    - using req / res objects
+    - sending back success -> json object / error -> txt
+    - integration test simulating HTTP calls
 
-    [BE] Validation workflow 
-        - usage of DTOs & decorators from class-validator 
-        - building general utility with validate function
-        - validation is triggered directly from Router endpoints & service is accessed afterwards    
+* [BE] Validation workflow 
+    - usage of DTOs & decorators from class-validator 
+    - building general utility with validate function
+    - validation is triggered directly from Router endpoints & service is accessed afterwards    
 
-    [BE] Placing bids & Auction resolution
-        - leveraging SQL ordering and filtering capacity to optimize the app (bidsPerUser, resolveAuctions)
-        - abstracting complex logic into separate functions
-        - thinking about business logic & "edge cases" (max rate calculation -> min rate has to be defined!)
+* [BE] Placing bids & Auction resolution
+    - leveraging SQL ordering and filtering capacity to optimize the app (bidsPerUser, resolveAuctions)
+    - abstracting complex logic into separate functions
+    - thinking about business logic & "edge cases" (max rate calculation -> min rate has to be defined!)
 
-    [FE] API & Redux
-        - fetching data from BE & storing them in the Redux store
-        - setting up Redux Actions, Reducers & Selectors
-        - FE data flow - updating the Redux store state (Login/Logout, profile update)
+* [FE] API & Redux
+    - fetching data from BE & storing them in the Redux store
+    - setting up Redux Actions, Reducers & Selectors
+    - FE data flow - updating the Redux store state (Login/Logout, profile update)
 
-    [FE] Register & Profile
-        - TopBarComponent with ReactNode as prop (Login / Register link / username from Redux store)
-        - RegisterFormComponent 
-            - reactive input fields + FE validation after submit
-            - React Bootstrap FormControl + native HTML5 form validation
-            - implementing Toasts for user notification
-            - component reused on Profile page for resetting email &/ password (with preset email value - UX)
+* [FE] Register & Profile
+    - TopBarComponent with ReactNode as prop (Login / Register link / username from Redux store)
+    - RegisterFormComponent 
+        - reactive input fields + FE validation after submit
+        - React Bootstrap FormControl + native HTML5 form validation
+        - implementing Toasts for user notification
+        - component reused on Profile page for resetting email &/ password (with preset email value - UX)
 
-    [FE] Dashboard
-        - selective dispatch of data fetch based on the user role
-        - selective display of SideBarComponent & content for logged-in user
-        - limiting display to top 5 via props for both Auctions/ Bids tables
+* [FE] Dashboard
+    - selective dispatch of data fetch based on the user role
+    - selective display of SideBarComponent & content for logged-in user
+    - limiting display to top 5 via props for both Auctions/ Bids tables
 
-    [FE] Bids & Auctions
-        - date & time conversions & comparisons - utilities
-        - filtering display to current / history via props
-        - usage of React fragments & key mapping
-        - Accordion for Auction resolution table display
-        - Modal for placing Bids directly on the page       
-        - AuctionsTable has different rendering based on user role (admin cannot place bids) & based on page (dashboard - auctions extended)
-        - selective input fields display (competitive / non-competitive)
-  
-    [devops] setup initial CI via GitHub Actions
-        - handling setup for 2 apps in 1 repo
-        - setup env vars for MySQL
+* [FE] Bids & Auctions
+    - date & time conversions & comparisons - utilities
+    - filtering display to current / history via props
+    - usage of React fragments & key mapping
+    - Accordion for Auction resolution table display
+    - Modal for placing Bids directly on the page       
+    - AuctionsTable has different rendering based on user role (admin cannot place bids) & based on page (dashboard - auctions extended)
+    - selective input fields display (competitive / non-competitive)
 
-# Tech Stack
-
-### Typescript
-A strongly typed version of Javascript.
-
-https://www.typescriptlang.org/
-
-### dotenv
-For loading environmental variables from a .env file into `process.env`.
-
-https://www.npmjs.com/package/dotenv
-
-### Jest + supertest
-Test framework. Supertest to simulate HTTP calls for integration test.
-
-https://jestjs.io/
-
-### Eslint + Prettier
-For enforcing a unified code style across the application.
-
-https://eslint.org/
-https://prettier.io/
-
-
-## Backend
-
-### Node.js + ts-node + nodemon
-Server side runtime environment built on Chrome's V8 JavaScript engine.
-ts-node - a CLI tool that can run Typescript files directly
-nodemon - automated listening to file changes
-
-https://nodejs.org/
-
-### Express.js
-Web framework for receiving HTTP calls and responding to them. 
-
-https://expressjs.com/
-
-### MySQL + TypeORM
-An Object–relational mapping library with strong Typescript support.
-
-https://typeorm.io/
-
-
-## Frontend
-
-### React
-The UI framework.
-
-https://reactjs.org/
-
-### Redux
-Used for global state management.
-
-https://redux.js.org/
-
-### Sass
-For defining custom CSS styles and themes.
-
-https://sass-lang.com/
+* [devops] setup initial CI via GitHub Actions
+    - handling setup for 2 apps in 1 repo
+    - setup env vars for MySQL
