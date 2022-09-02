@@ -53,7 +53,7 @@ BE -> routes/rootRouter -> authRouter -> utilities/validation (class-validator l
 BE -> services/authService/loginUser -> generateToken -> jwt added to cookies + response .json/.txt (success/error)
 
 FE -> toast notification from BE\
-FE [SUCCESS] -> store/slices/user/setupUserDataAction -> redirect to dashboard
+FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboard
 
 
 ## Lessons learned  
