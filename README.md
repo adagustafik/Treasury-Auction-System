@@ -85,7 +85,7 @@ FE -> toast notification from BE\
 FE [on success] -> store/slices/user/setupUserDataAction -> redirect to dashboard
 
 
-## Lessons learned  
+## Lessons learned / Tasks covered 
 * [BE] Authentication / Authorization
     - generating & validating jsonwebtoken
     - handling registration / login / logout
