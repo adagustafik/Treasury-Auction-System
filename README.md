@@ -30,26 +30,26 @@ All registered users can see public Auction resolutions, so that fair treatment 
 
 ## Architecture
 ### DB Entities
-Auction 
-    -> OneToMany Bid
-    -> OneToMany Purchase (to display Auction resolution to users)
-User
-    -> OneToMany Bid
-    -> OneToMany Purchase
-Bid
-    -> ManyToOne User
-    -> ManyToOne Auction
-Purchase
-    -> OneToOne Bid (Purchase -> Bid -> User connection leveraged here)
+Auction\ 
+    -> OneToMany Bid\
+    -> OneToMany Purchase (to display Auction resolution to users)\
+User\
+    -> OneToMany Bid\
+    -> OneToMany Purchase\
+Bid\
+    -> ManyToOne User\
+    -> ManyToOne Auction\
+Purchase\
+    -> OneToOne Bid (Purchase -> Bid -> User connection leveraged here)\
     -> ManyToOne Auction
 
 ### Basic data flow
-FE -> components/AppRouter -> pages/LoginPage -> LoginFormComponent -> api/fetchLogin
-
-BE -> routes/rootRouter -> authRouter -> utilities/validation (class-validator library)
-BE -> services/authService/loginUser -> generateToken -> jwt added to cookies + response .json/.txt (success/error)
-
-FE -> toast notification from BE
+FE -> components/AppRouter -> pages/LoginPage -> LoginFormComponent -> api/fetchLogin\
+\
+BE -> routes/rootRouter -> authRouter -> utilities/validation (class-validator library)\
+BE -> services/authService/loginUser -> generateToken -> jwt added to cookies + response .json/.txt (success/error)\
+\
+FE -> toast notification from BE\
 FE [SUCCESS] -> store/slices/user/setupUserDataAction -> redirect to dashboard
 
 
