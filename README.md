@@ -31,20 +31,20 @@ All registered users can see public Auction resolutions, so that fair treatment 
 ## Architecture
 ### DB Entities
 Auction\
-    -> OneToMany Bid\
-    -> OneToMany Purchase (to display Auction resolution to users)
+    @OneToMany Bid\
+    @OneToMany Purchase (to display Auction resolution to users)
 
 User\
-    -> OneToMany Bid\
-    -> OneToMany Purchase\
+    @OneToMany Bid\
+    @OneToMany Purchase\
 
 Bid\
-    -> ManyToOne User\
-    -> ManyToOne Auction
+    @ManyToOne User\
+    @ManyToOne Auction
 
 Purchase\
-    -> OneToOne Bid (Purchase -> Bid -> User connection used here)\
-    -> ManyToOne Auction
+    @OneToOne Bid (Purchase -> Bid -> User connection used here)\
+    @ManyToOne Auction
 
 ### Basic data flow
 FE -> components/AppRouter -> pages/LoginPage -> LoginFormComponent -> api/fetchLogin
