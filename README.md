@@ -65,7 +65,7 @@ css extension
 
 **User**\
     @OneToMany Bid\
-    @OneToMany Purchase\
+    @OneToMany Purchase
 
 **Bid**\
     @ManyToOne User\
